@@ -58,6 +58,26 @@ This was the project from the Next Level Week 16th Edition that was presented fr
 This project is a web travel plan application to help people to efficiently plan the next trip, invite friends and organize the activities.
 Check the project online [here](https://douglasdl.github.io/NLW16-React/index.html).
 
+Create the React project with TypeScript using Vite:
+```sh
+npm create vite@latest
+```
+
+Install the dependencies:
+```sh
+npm i 
+```
+
+Install the development dependencies:
+```sh
+npm i -D
+```
+
+Run the project:
+```sh
+npm run dev
+```
+
 ## 🔖 Layout
 
 The basic layout project can be accessed in [this link](https://www.figma.com/design/sY04E2s0FLhZU4wsdCBE3w/NLW-Journey-%E2%80%A2-Roteiro-de-Viagem?node-id=0-1&t=ZrUmpZJmqO76cS9O-0) in your [Figma](https://figma.com) account.
