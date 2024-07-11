@@ -25,7 +25,7 @@ Trilha React
 
 ## 🚀 Technologies
 
-This project was developped using the following technologies:
+This project was developed using the following technologies:
 
 <p alight="center">
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img height="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript"></a>
@@ -72,7 +72,7 @@ npm create vite@latest
 Install the dependencies:
 
 ```sh
-npm i
+npm i lucide-react
 ```
 
 Install the development dependencies:
@@ -95,7 +95,7 @@ npm run dev
 
 ## 🔖 Layout
 
-The basic layout project can be accessed in [this link](https://www.figma.com/design/sY04E2s0FLhZU4wsdCBE3w/NLW-Journey-%E2%80%A2-Roteiro-de-Viagem?node-id=0-1&t=ZrUmpZJmqO76cS9O-0) in your [Figma](https://figma.com) account.
+The basic layout project can be accessed in [this link](https://www.figma.com/design/efLzd0WxVkS9WoYf729vXf/NLW-Journey-%E2%80%A2-Planejador-de-viagem?node-id=3-376&t=64RoINGCxAEGLpJr-0) in your [Figma](https://figma.com) account.
 
 ## 💻 IDE
 
