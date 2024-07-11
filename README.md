@@ -1,4 +1,5 @@
 # NLW16 - Journey
+
 Trilha React
 
 <p align="center">
@@ -25,6 +26,7 @@ Trilha React
 ## 🚀 Technologies
 
 This project was developped using the following technologies:
+
 <p alight="center">
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img height="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript"></a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -43,14 +45,16 @@ This project was developped using the following technologies:
 </p>
 
 📚 Libraries
-- [Google Fonts](https://fonts.google.com/)
+
+- [Google Fonts](https://fonts.google.com/specimen/Inter)
 - [Day.js](https://day.js.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 
 🛠 Utilities
+
 - Images
-[Ramdom Photos](http://lorempixel.com/150/150/people/)
-[Clippy CSS](https://bennettfeely.com/clippy/)
+  [Ramdom Photos](http://lorempixel.com/150/150/people/)
+  [Clippy CSS](https://bennettfeely.com/clippy/)
 
 ## 📐 Project
 
@@ -59,21 +63,32 @@ This project is a web travel plan application to help people to efficiently plan
 Check the project online [here](https://douglasdl.github.io/NLW16-React/index.html).
 
 Create the React project with TypeScript using Vite:
+
 ```sh
+nvm use 20
 npm create vite@latest
 ```
 
 Install the dependencies:
+
 ```sh
-npm i 
+npm i
 ```
 
 Install the development dependencies:
+
 ```sh
-npm i -D
+npm install -D tailwindcss postcss autoprefixer
+```
+
+Generate the tailwind.config.js and postcss.config.js:
+
+```sh
+npx tailwindcss init -p
 ```
 
 Run the project:
+
 ```sh
 npm run dev
 ```
@@ -83,49 +98,48 @@ npm run dev
 The basic layout project can be accessed in [this link](https://www.figma.com/design/sY04E2s0FLhZU4wsdCBE3w/NLW-Journey-%E2%80%A2-Roteiro-de-Viagem?node-id=0-1&t=ZrUmpZJmqO76cS9O-0) in your [Figma](https://figma.com) account.
 
 ## 💻 IDE
+
 This project was done using [Visual Studio Code](https://code.visualstudio.com/) IDE.
 
 ### 🧩 VS Code Extensions
 
-- [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
-- [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
-- [Omni Theme](https://marketplace.visualstudio.com/items?itemName=rocketseat.theme-omni)
-- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode#:~:text=Prettier%20is%20an%20opinionated%20code,account%2C%20wrapping%20code%20when%20necessary.)
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+- [PostCSS Language Support](https://marketplace.visualstudio.com/items?itemName=csstools.postcss)
 
 ### ⚙ VS Code Configuration
 
--   CRTL + SHIFT + P
-    -   settings.json
+- CRTL + SHIFT + P
+  - settings.json
 
 ```json
 {
-    "editor.fontSize": 16,
-    "terminal.integrated.fontSize": 16,
-    "workbench.colorTheme": "Omni",
-    "workbench.iconTheme": "material-icon-theme",
-    "editor.bracketPairColorization.enabled": true,
-    "editor.minimap.enabled": false,
-    "editor.wordWrap": "on",
-    "workbench.editor.tabSizing": "shrink",
-    "explorer.compactFolders": false,
+  "editor.fontSize": 16,
+  "terminal.integrated.fontSize": 16,
+  "workbench.colorTheme": "Omni",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.minimap.enabled": false,
+  "editor.wordWrap": "on",
+  "workbench.editor.tabSizing": "shrink",
+  "explorer.compactFolders": false,
 
-    // formatter
-    "prettier.tabWidth": 2,
-    "prettier.semi": false, 
-    "prettier.singleQuote": true,
-    "prettier.trailingComma": "none", 
-    "prettier.arrowParens": "avoid",
-    "prettier.endOfLine": "auto",
-    "editor.tabSize": 2,
-    "editor.formatOnSave": true,
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "liveServer.settings.donotShowInfoMsg": true,
-    "liveServer.settings.donotVerifyTags": true,
+  // formatter
+  "prettier.tabWidth": 2,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "none",
+  "prettier.arrowParens": "avoid",
+  "prettier.endOfLine": "auto",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true
 }
 ```
 
