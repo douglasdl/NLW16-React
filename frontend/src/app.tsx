@@ -1,9 +1,12 @@
-import { MapPin, Calendar, ArrowRight, UserRoundPlus, Settings2, X, AtSign, Plus } from 'lucide-react';
-import { useState } from 'react';
+import { MapPin, Calendar, UserRoundPlus, Settings2, X, AtSign } from 'lucide-react';
+import { FormEvent, useState } from 'react';
+import { Email } from './components/Email';
+import { Button } from './components/Button';
 
 export function App() {
   const [isGuestsInputOpen, setIsGuestsInputOpen] = useState(false);
   const [isGuestsModalOpen, setIsGuestsModalOpen] = useState(true);
+  const [emailsToInvite, setEmailsToInvite] = useState([]);
   
   function openGuestsInput() {
     setIsGuestsInputOpen(true);
@@ -19,6 +22,33 @@ export function App() {
 
   function closeGuestsModal() {
     setIsGuestsModalOpen(false);
+  }
+
+  function addNewEmailToInvite(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const data = new FormData(event.currentTarget)
+    const email = data.get("email")?.toString()
+
+    if(!email) {
+      return
+    }
+
+    if(emailsToInvite.includes(email)) {
+      return
+    }
+
+    setEmailsToInvite([
+      ...emailsToInvite,
+      email
+    ])
+
+    event.currentTarget.reset();
+  }
+
+  function removeEmailFromInvites(emailToRemove: string) {
+    const newEmailList = emailsToInvite.filter((email) => email !== emailToRemove);
+    setEmailsToInvite(newEmailList);
   }
 
   return (
@@ -64,13 +94,12 @@ export function App() {
                   <Settings2 className='size-5' />
                 </button>
               ) : (
-                <button 
-                  className='flex items-center gap-2 bg-lime-300 text-lime-950 rounded-lg px-5 py-2 font-medium hover:bg-lime-400'
+                
+                <Button 
+                  title='Continuar'
+                  icon='arrow-right'
                   onClick={openGuestsInput}
-                >
-                  Continuar
-                  <ArrowRight className='size-5' />
-                </button>
+                />
               )
             }
           </div>
@@ -93,13 +122,11 @@ export function App() {
 
                 <div className='w-px h-6 bg-zinc-800'></div>
                 
-                <button 
-                  className='flex items-center gap-2 bg-lime-300 text-lime-950 rounded-lg px-5 py-2 font-medium hover:bg-lime-400'
+                <Button  
+                  title='Confirmar viagem'
+                  icon='arrow-right'
                   onClick={() => {}}
-                >
-                  Confirmar viagem
-                  <ArrowRight className='size-5' />
-                </button>
+                />
                   
               </div>
             )
@@ -127,70 +154,33 @@ export function App() {
               </div>
 
               <div className='flex flex-wrap gap-2'>
-                <div className='py-1.5 px-2.5 rounded-md bg-zinc-800 flex items-center gap-2'>
-                  <span className='text-zinc-300 flex items-center gap-2'>
-                    douglas_san@hotmail.com
-                    <button onClick={closeGuestsModal}>
-                      <X className='size-4 text-zinc-400' />
-                    </button>
-                  </span>
-                </div>
-
-                <div className='py-1.5 px-2.5 rounded-md bg-zinc-800 flex items-center gap-2'>
-                  <span className='text-zinc-300 flex items-center gap-2'>
-                    douglas_san@hotmail.com
-                    <button onClick={closeGuestsModal}>
-                      <X className='size-4 text-zinc-400' />
-                    </button>
-                  </span>
-                </div>
-
-                <div className='py-1.5 px-2.5 rounded-md bg-zinc-800 flex items-center gap-2'>
-                  <span className='text-zinc-300 flex items-center gap-2'>
-                    douglas_san@hotmail.com
-                    <button onClick={closeGuestsModal}>
-                      <X className='size-4 text-zinc-400' />
-                    </button>
-                  </span>
-                </div>
-
-                <div className='py-1.5 px-2.5 rounded-md bg-zinc-800 flex items-center gap-2'>
-                  <span className='text-zinc-300 flex items-center gap-2'>
-                    douglas_san@hotmail.com
-                    <button onClick={closeGuestsModal}>
-                      <X className='size-4 text-zinc-400' />
-                    </button>
-                  </span>
-                </div>
-
-                <div className='py-1.5 px-2.5 rounded-md bg-zinc-800 flex items-center gap-2'>
-                  <span className='text-zinc-300 flex items-center gap-2'>
-                    douglas_san@hotmail.com
-                    <button onClick={closeGuestsModal}>
-                      <X className='size-4 text-zinc-400' />
-                    </button>
-                  </span>
-                </div>
+                {
+                  emailsToInvite.map((email) => {
+                    return (
+                      <Email key={email} email={email} onClose={() => removeEmailFromInvites(email)} />
+                    )
+                  })
+                }
               </div>
 
               <div className='w-full h-px bg-zinc-800'></div>
 
-              <form action="" className='flex items-center gap-2 p-2.5 bg-zinc-950 border border-zinc-800 rounded-lg'>
+              <form onSubmit={addNewEmailToInvite} className='flex items-center gap-2 p-2.5 bg-zinc-950 border border-zinc-800 rounded-lg'>
                 <div className='flex items-center flex-1 px-2 gap-2'>
                   <AtSign className='size-4 text-zinc-400' />
                   <input 
-                    type="text" 
+                    type="email" 
+                    name="email"
                     placeholder="Digite o e-mail do convidado" 
                     className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1"
                   />
                 </div>
-                <button 
-                  className='flex items-center gap-2 bg-lime-300 text-lime-950 rounded-lg px-5 py-2 font-medium hover:bg-lime-400'
-                  onClick={() => {}}
-                >
-                  Convidar
-                  <Plus className='size-5' />
-                </button>
+                <Button 
+                  type='submit'
+                  title='Convidar' 
+                  icon='plus'
+                  onClick={() => {}} 
+                />
               </form>
             </div>
           </div>
